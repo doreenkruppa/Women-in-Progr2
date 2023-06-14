@@ -10,9 +10,9 @@ export default function ArticlesCard({ listArticles, article }) {
   return (
     <div className="articles-card">
       <h2>{article.headline}</h2>
-      <p>{article.quote}</p>
+      <h3>{article.author}</h3>
+      <p>"{article.quote}"</p>
       <div>
-        <b>link to the article</b>
         <a href={article.linkToArticle}>read full article</a>
       </div>
       <button onClick={deleteArticle}>Delete</button>

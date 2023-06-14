@@ -4,6 +4,7 @@ import axios from "axios";
 export default function ArticlesForm({ listArticles }) {
   const [newArticle, setNewArticle] = useState({
     headline: "",
+    author: "",
     quote: "",
     linkToArticle: "",
   });
@@ -21,6 +22,7 @@ export default function ArticlesForm({ listArticles }) {
     console.log("sending request...");
     setNewArticle({
       headline: "",
+      author: "",
       quote: "",
       linkToArticle: "",
     });
@@ -38,6 +40,14 @@ export default function ArticlesForm({ listArticles }) {
               setNewArticle({ ...newArticle, headline: e.target.value })
             }
             value={newArticle.headline}
+          />
+          <input
+            type="text"
+            placeholder="author"
+            onChange={(e) =>
+              setNewArticle({ ...newArticle, author: e.target.value })
+            }
+            value={newArticle.author}
           />
           <input
             type="text"

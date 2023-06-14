@@ -15,6 +15,7 @@ export const createArticle = async (req, res) => {
   try {
     const createdArticle = await Article.create({
       headline: req.body.headline,
+      author: req.body.author,
       quote: req.body.quote,
       linkToArticle: req.body.linkToArticle,
     });

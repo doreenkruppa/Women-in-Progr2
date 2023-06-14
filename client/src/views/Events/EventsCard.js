@@ -4,13 +4,20 @@ import axios from "axios";
 export default function EventsCard({
   listEvents,
   deletedEvent,
-  onDelete,
   setEvents,
   event,
   events,
   key,
 }) {
-  /**const url = "http://localhost:4000/api/events";
+  const deleteEvent = async () => {
+    console.log("deleting");
+    const url = "http://localhost:4000/api/events";
+    const res = await axios.delete(`${url}/delete/${event._id}`);
+    await listEvents();
+  };
+
+  /**const 
+
 
   const deleteEvent = async (data) => {
     try {
@@ -48,13 +55,7 @@ export default function EventsCard({
           <b>More Infos:</b>
           <a href={event.linkToWebsite}>{event.linkToWebsite}</a>
         </div>
-        <button
-          onClick={() => {
-            onDelete(key);
-          }}
-        >
-          Delete
-        </button>
+        <button onClick={deleteEvent}>Delete</button>
       </div>
     </div>
   );

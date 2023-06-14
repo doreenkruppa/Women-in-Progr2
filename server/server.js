@@ -3,6 +3,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import { StatusCodes } from "http-status-codes";
 import eventsRoutes from "./routes/eventsRoutes.js";
+import pioneersRoutes from "./routes/pioneersRoutes.js";
 import cors from "cors";
 dotenv.config();
 const app = express();
@@ -23,7 +24,7 @@ mongoose
 
 app.use("/api/events", eventsRoutes);
 //app.use("/api/home", homeRoutes);
-//app.use("/api/pioneers", pioneersRoutes);
+app.use("/api/pioneers", pioneersRoutes);
 //app.use("/api/groups", groupsRoutes);
 app.all("*", (req, res) => {
   return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json("invalid request");

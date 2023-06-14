@@ -5,7 +5,7 @@ import PioneersForm from "./PioneersForm";
 import Sidebar from "../../components/Sidebar/Sidebar";
 
 export default function PioneersList() {
-  const { pioneers } = useContext(PioneersContext);
+  const { pioneers, setPioneers } = useContext(PioneersContext);
   return (
     <>
       <h1 id="group-list-top">

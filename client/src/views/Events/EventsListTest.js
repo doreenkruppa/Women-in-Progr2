@@ -5,7 +5,6 @@ import EventsCard from "./EventsCard";
 
 export default function EventsListTest() {
   const [events, setEvents] = useState([]);
-  const [deletedEvent, setDeletedEvent] = useState({});
 
   const url = "http://localhost:4000/api/events";
 
@@ -18,14 +17,14 @@ export default function EventsListTest() {
     listEvents();
   }, []);
 
-  const removeHandler = (index) => {
+  /**const removeHandler = (index) => {
     const removedEvent = events.filter((event, i) => i === index);
     console.log(removedEvent);
     setDeletedEvent(removedEvent);
     const updatedEvents = events.filter((event, i) => i !== index);
     console.log(updatedEvents);
     setEvents(updatedEvents);
-  };
+  };*/
 
   return (
     <div>
@@ -42,8 +41,6 @@ export default function EventsListTest() {
               key={i}
               listEvents={listEvents}
               setEvents={setEvents}
-              onDelete={() => removeHandler(i)}
-              deletedEvent={deletedEvent}
             />
           ))}
       </div>

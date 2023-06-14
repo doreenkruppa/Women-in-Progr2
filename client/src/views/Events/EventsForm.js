@@ -44,7 +44,7 @@ export default function EventsForm({ listEvents }) {
           />
           <input
             type="text"
-            placeholder="descriptions of the event"
+            placeholder="description of the event"
             onChange={(e) =>
               setNewEvent({ ...newEvent, description: e.target.value })
             }

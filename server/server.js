@@ -5,6 +5,7 @@ import { StatusCodes } from "http-status-codes";
 import eventsRoutes from "./routes/eventsRoutes.js";
 import pioneersRoutes from "./routes/pioneersRoutes.js";
 import articlesRoutes from "./routes/articlesRoutes.js";
+import groupsRoutes from "./routes/groupsRoutes.js";
 import cors from "cors";
 dotenv.config();
 const app = express();
@@ -28,6 +29,7 @@ app.use("/api/events", eventsRoutes);
 app.use("/api/pioneers", pioneersRoutes);
 //app.use("/api/groups", groupsRoutes);
 app.use("/api/articles", articlesRoutes);
+app.use("/api/groups", groupsRoutes);
 app.all("*", (req, res) => {
   return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json("invalid request");
 });

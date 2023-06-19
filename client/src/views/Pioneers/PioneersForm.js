@@ -1,36 +1,79 @@
-import React, { useContext } from "react";
-import { PioneersContext } from "../../context/PioneersContext";
+import React, { useState } from "react";
+import axios from "axios";
 
-export default function PioneersForm() {
-  const { pioneers, setPioneers } = useContext(PioneersContext);
+export default function PioneersForm({ listPioneers, pioneers, setPioneers }) {
+  const [newPioneer, setNewPioneer] = useState({
+    name: "",
+    description: "",
+    linkToWebsite: "",
+    imageadresse: "",
+  });
+  const url = "http://localhost:4000/api/pioneers";
+
+  const addPioneer = async (data) => {
+    try {
+      if (pioneers.some((pioneer) => pioneer.name === data.name))
+        return alert("the name exists");
+
+      await axios.post(`${url}/create`, data);
+    } catch (err) {
+      return err;
+    }
+  };
+  async function handleSubmit(e) {
+    e.preventDefault();
+    const res = await addPioneer(newPioneer);
+    console.log("sending res");
+    setNewPioneer({
+      name: "",
+      description: "",
+      linkToWebsite: "",
+      imageadresse: "",
+    });
+    await listPioneers();
+  }
+
   return (
     <div className="pioneers-form">
       <h3>Add another Women Pioneer here:</h3>
-      <form
-        onSubmit={(e) => {
-          e.preventDefault();
-          if (pioneers.some((pioneer) => pioneer.name === e.target.name.value))
-            return pioneers;
-          else
-            setPioneers([
-              ...pioneers,
-              {
-                name: e.target.name.value,
-                vita: e.target.vita.value,
-                furtherInfo: e.target.furtherInfo.value,
-                img: e.target.image.value,
-              },
-            ]);
-        }}
-      >
+      <form onSubmit={handleSubmit}>
         <p>Name of the Women Pioneer:</p>
-        <input type={"text"} name="name" />
+        <input
+          type="text"
+          placeholder="name"
+          onChange={(e) =>
+            setNewPioneer({ ...newPioneer, name: e.target.value })
+          }
+          value={newPioneer?.name}
+        />
         <p>Some Infos about her:</p>
-        <input type={"text"} name="vita" />
+        <input
+          type="text"
+          placeholder="Infos about her"
+          onChange={(e) =>
+            setNewPioneer({ ...newPioneer, description: e.target.value })
+          }
+          value={newPioneer?.description}
+        />
+
         <p>Link to further informations:</p>
-        <input type={"url"} name="furtherInfo" />
+        <input
+          type="url"
+          placeholder="Link zu mehr Infos"
+          onChange={(e) =>
+            setNewPioneer({ ...newPioneer, linkToWebsite: e.target.value })
+          }
+          value={newPioneer?.linkToWebsite}
+        />
         <p>copy an image adress from a picture of her inside here:</p>
-        <input type={"text"} name="image" />
+        <input
+          type="text"
+          placeholder="imageadress"
+          onChange={(e) =>
+            setNewPioneer({ ...newPioneer, imageadresse: e.target.value })
+          }
+          value={newPioneer?.imageadresse}
+        />
         <br></br>
         <button>add</button>
       </form>

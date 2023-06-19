@@ -1,3 +1,10 @@
+ <!--<div className="image">
+        <img
+          style={{ width: "300px", height: "340px", borderRadius: "20px" }}
+          src={group.img}
+          alt="Logo of the group"
+        /> -->
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

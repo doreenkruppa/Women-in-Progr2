@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function PioneersCard({ pioneer }) {
+export default function PioneersCard({ pioneer, listPioneers }) {
   return (
     <div
       className="pioneer-card"
@@ -15,17 +15,21 @@ export default function PioneersCard({ pioneer }) {
         flexDirection: "row",
       }}
     >
-      <img style={{ width: "350px" }} src={pioneer.img} alt={pioneer.name} />
+      <img
+        style={{ width: "350px" }}
+        src={pioneer.imageadresse}
+        alt={pioneer.name}
+      />
 
       <div className="pioneers-cards-text">
         <h1>{pioneer.name}</h1>
         <br />
         <span style={{ fontSize: "15px" }}>
-          <b> Vita:</b> {pioneer.vita}
+          <b> Vita:</b> {pioneer.description}
         </span>
         <div style={{ fontSize: "15px" }}>
           <b>for further informations look here:</b>
-          <a href={pioneer.furtherInfo}>{pioneer.furtherInfo}</a>
+          <a href={pioneer.linkToWebsite}>{pioneer.linkToWebsite}</a>
         </div>
       </div>
     </div>

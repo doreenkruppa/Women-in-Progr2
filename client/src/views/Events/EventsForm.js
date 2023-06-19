@@ -4,6 +4,7 @@ import axios from "axios";
 export default function EventsForm({ listEvents }) {
   const [newEvent, setNewEvent] = useState({
     name: "",
+    dateOfEvent: "",
     description: "",
     linkToWebsite: "",
   });
@@ -25,6 +26,7 @@ export default function EventsForm({ listEvents }) {
     console.log("sending request...");
     setNewEvent({
       name: "",
+      dateOfEvent: "",
       description: "",
       linkToWebsite: "",
     });
@@ -41,6 +43,14 @@ export default function EventsForm({ listEvents }) {
             placeholder="name"
             onChange={(e) => setNewEvent({ ...newEvent, name: e.target.value })}
             value={newEvent?.name}
+          />
+          <input
+            type="date"
+            placeholder="date of event"
+            onChange={(e) =>
+              setNewEvent({ ...newEvent, dateOfEvent: e.target.value })
+            }
+            value={newEvent?.dateOfEvent}
           />
           <input
             type="text"

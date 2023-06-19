@@ -15,6 +15,7 @@ export const createEvent = async (req, res) => {
   try {
     const createdEvent = await Event.create({
       name: req.body.name,
+      dateOfEvent: req.body.dateOfEvent,
       description: req.body.description,
       linkToWebsite: req.body.linkToWebsite,
     });

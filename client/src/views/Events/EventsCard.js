@@ -47,6 +47,11 @@ export default function EventsCard({
       <div className="text">
         <h2>{event.name}</h2>
         <div>
+          <p>
+            <b>Date of Event:</b> {event?.dateOfEvent?.slice(0, 10)}
+          </p>
+        </div>
+        <div>
           <span style={{ fontSize: "15px" }}>
             <b> Description:</b> {event.description}
           </span>

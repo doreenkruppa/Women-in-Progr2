@@ -1,14 +1,20 @@
 import React from "react";
+import axios from "axios";
 
-export default function GroupsCard({ group }) {
+export default function GroupsCard({ group, listGroups }) {
+  const deleteGroup = async () => {
+    console.log("deleting");
+    const url = "http://localhost:4000/api/groups";
+    const res = await axios.delete(`${url}/delete/${group._id}`);
+    await listGroups();
+  };
   return (
     <div
       className="group-card"
       style={{
-        // backgroundImage: `url(${group.img})`,
-        // backgroundRepeat: "no-repeat",
-        // backgroundSize: "cover",
-
+        //backgroundImage: `${group.img}`,
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
         border: "1px solid black",
         padding: "10px",
         width: "40%",
@@ -28,13 +34,8 @@ export default function GroupsCard({ group }) {
           <b>Contact:</b>
           <a href={group.contact}>{group.contact}</a>
         </div>
-      </div>
-      <div className="image">
-        <img
-          style={{ width: "300px", height: "340px", borderRadius: "20px" }}
-          src={group.img}
-          alt="Logo of the group"
-        />
+
+        <button onClick={deleteGroup}>Delete</button>
       </div>
     </div>
   );

@@ -1,26 +1,16 @@
 import React, { useState, useContext } from "react";
 import { GroupsContext } from "../../context/GroupsContext";
-import axios from "axios";
 
 export default function GroupsForm() {
-  const { groups, listGroups } = useContext(GroupsContext);
+  const { groups, listGroups, addGroup } = useContext(GroupsContext);
   const [newGroup, setNewGroup] = useState({
     name: "",
     description: "",
     contact: "",
     img: "",
   });
-  const url = "http://localhost:4000/api/groups";
-  const addGroup = async (data) => {
-    try {
-      if (groups.some((group) => group.name === data.name))
-        return alert("the name exists");
+  //const url = "http://localhost:4000/api/groups";
 
-      await axios.post(`${url}/create`, data);
-    } catch (err) {
-      return err;
-    }
-  };
   async function handleSubmit(e) {
     e.preventDefault();
     const res = await addGroup(newGroup);

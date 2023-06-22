@@ -1,15 +1,15 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../../axios-index";
 import EventsForm from "./EventsForm";
 import EventsCard from "./EventsCard";
 
 export default function EventsListTest() {
   const [events, setEvents] = useState([]);
 
-  const url = "http://localhost:4000/api/events";
+  //const url = "http://localhost:4000/api/events";
 
   const listEvents = async () => {
-    const res = await axios.get(`${url}/`);
+    const res = await axios.get(`/api/events/`);
     setEvents(res.data);
     console.log(res.data);
   };

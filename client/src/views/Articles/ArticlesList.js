@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import axios from "../../axios-index";
 import ArticlesForm from "./ArticlesForm";
 import ArticlesCard from "./ArticlesCard";
 
 export default function ArticlesList() {
   const [articles, setArticles] = useState([]);
-  const url = "http://localhost:4000/api/articles";
+  //const url = "http://localhost:4000/api/articles";
 
   const listArticles = async () => {
-    const res = await axios.get(`${url}/list`);
+    const res = await axios.get(`/api/articles/list`);
     setArticles(res.data);
     console.log(res.data);
   };

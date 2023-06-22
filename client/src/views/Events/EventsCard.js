@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+import axios from "../../axios-index";
 
 export default function EventsCard({
   listEvents,
@@ -11,8 +11,8 @@ export default function EventsCard({
 }) {
   const deleteEvent = async () => {
     console.log("deleting");
-    const url = "http://localhost:4000/api/events";
-    const res = await axios.delete(`${url}/delete/${event._id}`);
+    //const url = "http://localhost:4000/api/events";
+    const res = await axios.delete(`/api/events/delete/${event._id}`);
     await listEvents();
   };
 

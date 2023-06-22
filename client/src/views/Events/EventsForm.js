@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+import axios from "../../axios-index";
 
 export default function EventsForm({ listEvents }) {
   const [newEvent, setNewEvent] = useState({
@@ -10,11 +10,11 @@ export default function EventsForm({ listEvents }) {
   });
 
   //const url = "https://women-in-coding.onrender.com"
-  const url = "http://localhost:4000/api/events";
+  //const url = "http://localhost:4000/api/events";
 
   const addEvent = async (data) => {
     try {
-      await axios.post(`${url}/create`, data);
+      await axios.post(`/api/events/create`, data);
     } catch (err) {
       return err;
     }

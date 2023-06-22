@@ -1,10 +1,10 @@
-import axios from "axios";
+import axios from "../../axios-index";
 
 export default function ArticlesCard({ listArticles, article }) {
   const deleteArticle = async () => {
     console.log("deleting");
-    const url = "http://localhost:4000/api/articles";
-    const res = await axios.delete(`${url}/delete/${article._id}`);
+    //const url = "http://localhost:4000/api/articles";
+    const res = await axios.delete(`/api/articles/delete/${article._id}`);
     await listArticles();
   };
   return (

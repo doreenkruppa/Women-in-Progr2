@@ -1,27 +1,16 @@
 import React, { useState, useContext } from "react";
 import { PioneersContext } from "../../context/PioneersContext";
-import axios from "axios";
 
 export default function PioneersForm() {
-  const { pioneers, listPioneers } = useContext(PioneersContext);
+  const { pioneers, listPioneers, addPioneer } = useContext(PioneersContext);
   const [newPioneer, setNewPioneer] = useState({
     name: "",
     description: "",
     linkToWebsite: "",
     imageadresse: "",
   });
-  const url = "http://localhost:4000/api/pioneers";
+  //const url = "http://localhost:4000/api/pioneers";
 
-  const addPioneer = async (data) => {
-    try {
-      if (pioneers.some((pioneer) => pioneer.name === data.name))
-        return alert("the name exists");
-
-      await axios.post(`${url}/create`, data);
-    } catch (err) {
-      return err;
-    }
-  };
   async function handleSubmit(e) {
     e.preventDefault();
     const res = await addPioneer(newPioneer);

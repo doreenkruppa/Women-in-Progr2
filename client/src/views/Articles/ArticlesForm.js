@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import axios from "axios";
+import axios from "../../axios-index";
 
 export default function ArticlesForm({ listArticles }) {
   const [newArticle, setNewArticle] = useState({
@@ -8,10 +8,10 @@ export default function ArticlesForm({ listArticles }) {
     quote: "",
     linkToArticle: "",
   });
-  const url = "http://localhost:4000/api/articles";
+  //const url = "http://localhost:4000/api/articles";
   const addArticle = async (data) => {
     try {
-      await axios.post(`${url}/create`, data);
+      await axios.post(`/api/articles/create`, data);
     } catch (err) {
       return err;
     }

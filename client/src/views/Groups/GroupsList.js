@@ -16,7 +16,7 @@ export default function GroupsList() {
       <div className="groups-list-Container">
         <div className="groups-cards-Container">
           {groups &&
-            groups.map((item, i) => <GroupsCard group={item} key={i} />)}
+            groups.map((group, i) => <GroupsCard group={group} key={i} />)}
         </div>
         <GroupsForm />
       </div>

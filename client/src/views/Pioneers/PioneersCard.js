@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function PioneersCard({ pioneer, listPioneers }) {
+export default function PioneersCard({ pioneer }) {
   return (
     <div
       className="pioneer-card"

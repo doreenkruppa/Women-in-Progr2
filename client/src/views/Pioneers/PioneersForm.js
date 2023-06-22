@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { PioneersContext } from "../../context/PioneersContext";
 import axios from "axios";
 
-export default function PioneersForm({ listPioneers, pioneers, setPioneers }) {
+export default function PioneersForm() {
+  const { pioneers, listPioneers } = useContext(PioneersContext);
   const [newPioneer, setNewPioneer] = useState({
     name: "",
     description: "",

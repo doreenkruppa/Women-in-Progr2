@@ -1,4 +1,7 @@
 .App {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   text-align: center;
   overflow: scroll;
   background-color: rgb(173, 166, 218);
@@ -6,16 +9,18 @@
 }
 
 .home-container {
+  width: 75%;
   display: flex;
   flex-flow: row;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding-left: 10px;
   margin-bottom: 10px;
-  overflow: scroll;
+  overflow: auto;
 }
 .welcome-text {
-  padding: 20px 10px;
-  width: 30%;
+  padding: 5px;
+  margin: 10px;
+  width: 50%;
   text-align: left;
 }
 .header {
@@ -71,14 +76,16 @@ ul {
 }
 
 .image-home {
-  margin-top: 25px;
-  width: 35%;
+  margin: 30px;
+  width: 30%;
 }
 
 .groups-list-Container {
+  width: 65%;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
   padding: 10px;
 }
 .groups-cards-Container {

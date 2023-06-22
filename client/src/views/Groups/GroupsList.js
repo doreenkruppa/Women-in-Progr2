@@ -1,20 +1,10 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useContext } from "react";
+import { GroupsContext } from "../../context/GroupsContext";
 import GroupsCard from "./GroupsCard";
 import GroupsForm from "./GroupsForm";
 
 export default function GroupsList() {
-  const [groups, setGroups] = useState([]);
-  const url = "http://localhost:4000/api/groups";
-  const listGroups = async () => {
-    const res = await axios.get(`${url}/list`);
-    setGroups(res.data);
-    console.log(res.data);
-  };
-  useEffect(() => {
-    listGroups();
-  }, []);
-
+  const { groups } = useContext(GroupsContext);
   return (
     <>
       <h1 id="group-list-top">
@@ -26,17 +16,9 @@ export default function GroupsList() {
       <div className="groups-list-Container">
         <div className="groups-cards-Container">
           {groups &&
-            groups.map((item, i) => (
-              <GroupsCard
-                group={item}
-                key={i}
-                groups={groups}
-                listGroups={listGroups}
-                setGroups={setGroups}
-              />
-            ))}
+            groups.map((item, i) => <GroupsCard group={item} key={i} />)}
         </div>
-        <GroupsForm listGroups={listGroups} />
+        <GroupsForm />
       </div>
       <div className="ankerlinks-container">
         <a className="ankerlinks" href="#group-list-top">

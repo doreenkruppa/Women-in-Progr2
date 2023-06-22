@@ -1,11 +1,10 @@
 import React from "react";
 import FetchingImageHome from "../components/FetchingData/FetchingImageHome";
-import Sidebar from "../components/Sidebar/Sidebar";
+
 export default function Home() {
   return (
     <>
       <div className="home-container">
-        <Sidebar />
         <FetchingImageHome />
         <div className="welcome-text">
           <p>

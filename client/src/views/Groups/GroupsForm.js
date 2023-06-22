@@ -1,7 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { GroupsContext } from "../../context/GroupsContext";
 import axios from "axios";
 
-export default function GroupsForm({ listGroups, groups }) {
+export default function GroupsForm() {
+  const { groups, listGroups } = useContext(GroupsContext);
   const [newGroup, setNewGroup] = useState({
     name: "",
     description: "",

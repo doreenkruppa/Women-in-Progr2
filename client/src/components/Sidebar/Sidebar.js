@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { GroupsContext } from "../../context/GroupsContext";
 import { PioneersContext } from "../../context/PioneersContext";
+
 import SidebarCard from "./SidebarCard";
 
 export default function Sidebar() {

@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { GroupsContext } from "../../context/GroupsContext";
 
 export default function GroupsForm() {
-  const { groups, listGroups, addGroup } = useContext(GroupsContext);
+  const { listGroups, addGroup } = useContext(GroupsContext);
   const [newGroup, setNewGroup] = useState({
     name: "",
     description: "",

@@ -1,4 +1,3 @@
-import { StatusCodes } from "http-status-codes";
 import Pioneer from "../models/Pioneers.js";
 
 export const listPioneers = async (req, res) => {

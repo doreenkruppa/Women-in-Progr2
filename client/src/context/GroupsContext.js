@@ -5,6 +5,7 @@ export const GroupsContext = createContext();
 export default function GroupsContextProvider({ children }) {
   const [groups, setGroups] = useState([]);
   //const url = "http://localhost:4000/api/groups";
+
   const listGroups = async () => {
     const res = await axios.get(`/api/groups/list`);
     setGroups(res.data);
@@ -17,7 +18,7 @@ export default function GroupsContextProvider({ children }) {
   const addGroup = async (data) => {
     try {
       if (groups.some((group) => group.name === data.name))
-        return alert("the name exists");
+        return alert("the name already exists");
 
       await axios.post(`/api/groups/create`, data);
     } catch (err) {

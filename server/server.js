@@ -8,10 +8,12 @@ import articlesRoutes from "./routes/articlesRoutes.js";
 import groupsRoutes from "./routes/groupsRoutes.js";
 import cors from "cors";
 dotenv.config();
+const port = process.env.PORT;
 const app = express();
 app.use(express.json());
 app.use(cors());
 //connecting to the database
+
 mongoose
   .connect(
     `mongodb+srv://${process.env.DB_USER}:${process.env.DB_PASS}@${process.env.DB_HOST}/${process.env.DB_NAME}`
@@ -33,6 +35,6 @@ app.use("/api/groups", groupsRoutes);
 app.all("*", (req, res) => {
   return res.status(StatusCodes.INTERNAL_SERVER_ERROR).json("invalid request");
 });
-app.listen(4000, () => {
-  console.log("server is running");
+app.listen(port, () => {
+  console.log("server is running on port " + port);
 });

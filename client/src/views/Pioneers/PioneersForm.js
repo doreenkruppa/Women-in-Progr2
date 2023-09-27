@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { PioneersContext } from "../../context/PioneersContext";
 
 export default function PioneersForm() {
-  const { pioneers, listPioneers, addPioneer } = useContext(PioneersContext);
+  const { listPioneers, addPioneer } = useContext(PioneersContext);
   const [newPioneer, setNewPioneer] = useState({
     name: "",
     description: "",

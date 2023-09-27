@@ -1,14 +1,10 @@
-import axios from "../../axios-index";
+//import axios from "../../axios-index";
 //import { useContext } from "react";
 //import { GroupsContext } from "../../context/GroupsContext";
 
-export default function GroupsCard({ group, listGroups }) {
-  const deleteGroup = async () => {
-    console.log("deleting");
-    //const url = "http://localhost:4000/api/groups";
-    const res = await axios.delete(`/api/groups/delete/${group._id}`);
-    await listGroups();
-  };
+export default function GroupsCard({ group }) {
+  //const { group, deleteGroup } = useContext(GroupsContext);
+
   return (
     <div
       className="group-card"
@@ -36,7 +32,8 @@ export default function GroupsCard({ group, listGroups }) {
           <a href={group.contact}>{group.contact}</a>
         </div>
         <img style={{ width: "350px" }} src={group.img} alt={group.name} />
-        {<button onClick={deleteGroup}>Delete</button>}
+        {/**<button onClick={deleteGroup}>Delete</button>
+         * */}
       </div>
     </div>
   );

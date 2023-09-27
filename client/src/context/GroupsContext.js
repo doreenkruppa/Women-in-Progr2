@@ -25,8 +25,9 @@ export default function GroupsContextProvider({ children }) {
       return err;
     }
   };
+
   return (
-    <GroupsContext.Provider value={{ groups, setGroups, addGroup }}>
+    <GroupsContext.Provider value={{ groups, listGroups, setGroups, addGroup }}>
       {children}
     </GroupsContext.Provider>
   );

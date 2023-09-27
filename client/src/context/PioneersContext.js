@@ -26,6 +26,7 @@ export default function PioneersContextProvider({ children }) {
       return err;
     }
   };
+
   return (
     <PioneersContext.Provider
       value={{ pioneers, setPioneers, listPioneers, addPioneer }}

@@ -1,7 +1,8 @@
-import React, { useState } from "react";
-import axios from "../../axios-index";
+import React, { useState, useContext } from "react";
+import { EventsContext } from "../../context/EventsContext";
 
-export default function EventsForm({ listEvents }) {
+export default function EventsForm() {
+  const { listEvents, addEvent } = useContext(EventsContext);
   const [newEvent, setNewEvent] = useState({
     name: "",
     dateOfEvent: "",
@@ -12,13 +13,6 @@ export default function EventsForm({ listEvents }) {
   //const url = "https://women-in-coding.onrender.com"
   //const url = "http://localhost:4000/api/events";
 
-  const addEvent = async (data) => {
-    try {
-      await axios.post(`/api/events/create`, data);
-    } catch (err) {
-      return err;
-    }
-  };
   async function handleAddSubmit(e) {
     e.preventDefault();
 

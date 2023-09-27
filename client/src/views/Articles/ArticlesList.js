@@ -1,20 +1,12 @@
-import React, { useEffect, useState } from "react";
-import axios from "../../axios-index";
+import React, { useContext } from "react";
+//import axios from "../../axios-index";
 import ArticlesForm from "./ArticlesForm";
 import ArticlesCard from "./ArticlesCard";
+import { ArticlesContext } from "../../context/ArticlesContext";
 
 export default function ArticlesList() {
-  const [articles, setArticles] = useState([]);
+  const { articles } = useContext(ArticlesContext);
   //const url = "http://localhost:4000/api/articles";
-
-  const listArticles = async () => {
-    const res = await axios.get(`/api/articles/list`);
-    setArticles(res.data);
-    console.log(res.data);
-  };
-  useEffect(() => {
-    listArticles();
-  }, []);
 
   return (
     <div>
@@ -25,16 +17,10 @@ export default function ArticlesList() {
       <div className="articles-cards-container">
         {articles &&
           articles.map((article, i) => (
-            <ArticlesCard
-              articles={articles}
-              article={article}
-              key={i}
-              listArticles={listArticles}
-              setArticles={setArticles}
-            />
+            <ArticlesCard article={article} key={i} />
           ))}
       </div>
-      <ArticlesForm listArticles={listArticles} />
+      <ArticlesForm />
       <div className="ankerlinks-container">
         <a className="ankerlinks" href="#articles-list-top">
           back to the top

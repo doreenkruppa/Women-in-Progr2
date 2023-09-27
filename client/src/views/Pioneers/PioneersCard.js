@@ -1,12 +1,10 @@
-import React from "react";
-import axios from "../../axios-index";
+//import { useContext } from "react";
+//import { PioneersContext } from "../../context/PioneersContext";
+//import axios from "../../axios-index";
 
-export default function PioneersCard({ pioneer, listPioneers }) {
-  const deletePioneer = async () => {
-    console.log("deleting...");
-    const res = await axios.delete(`/api/pioneers/delete/${pioneer._id}`);
-    await listPioneers();
-  };
+export default function PioneersCard({ pioneer }) {
+  // const { pioneer, deletePioneer } = useContext(PioneersContext);
+
   return (
     <div
       className="pioneer-card"
@@ -38,7 +36,7 @@ export default function PioneersCard({ pioneer, listPioneers }) {
           <a href={pioneer.linkToWebsite}>{pioneer.linkToWebsite}</a>
         </div>
       </div>
-      <button onClick={deletePioneer}>Delete</button>
+      {/**<button onClick={deletePioneer}>Delete</button>*/}
     </div>
   );
 }

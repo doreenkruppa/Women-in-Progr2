@@ -1,23 +1,15 @@
-import React, { useEffect, useState } from "react";
-import axios from "../../axios-index";
+import React, { useContext } from "react";
+import { EventsContext } from "../../context/EventsContext";
+//import axios from "../../axios-index";
 import EventsForm from "./EventsForm";
 import EventsCard from "./EventsCard";
 
-export default function EventsListTest() {
-  const [events, setEvents] = useState([]);
+export default function EventsList() {
+  const { events } = useContext(EventsContext);
 
-  //const url = "http://localhost:4000/api/events";
+  /**const url = "http://localhost:4000/api/events";
 
-  const listEvents = async () => {
-    const res = await axios.get(`/api/events/`);
-    setEvents(res.data);
-    console.log(res.data);
-  };
-  useEffect(() => {
-    listEvents();
-  }, []);
-
-  /**const removeHandler = (index) => {
+  const removeHandler = (index) => {
     const removedEvent = events.filter((event, i) => i === index);
     console.log(removedEvent);
     setDeletedEvent(removedEvent);
@@ -35,16 +27,10 @@ export default function EventsListTest() {
       <div className="events-cards-Container">
         {events &&
           events.map((event, i) => (
-            <EventsCard
-              events={events}
-              event={event}
-              key={i}
-              listEvents={listEvents}
-              setEvents={setEvents}
-            />
+            <EventsCard events={events} event={event} key={i} />
           ))}
       </div>
-      <EventsForm listEvents={listEvents} />
+      <EventsForm />
       <div className="ankerlinks-container">
         <a className="ankerlinks" href="#events-list-top">
           back to the top

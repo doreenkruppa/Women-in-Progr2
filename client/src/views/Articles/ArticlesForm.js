@@ -1,7 +1,9 @@
-import React, { useState } from "react";
-import axios from "../../axios-index";
+import React, { useState, useContext } from "react";
+//import axios from "../../axios-index";
+import { ArticlesContext } from "../../context/ArticlesContext";
 
-export default function ArticlesForm({ listArticles }) {
+export default function ArticlesForm() {
+  const { listArticles, addArticle } = useContext(ArticlesContext);
   const [newArticle, setNewArticle] = useState({
     headline: "",
     author: "",
@@ -9,13 +11,7 @@ export default function ArticlesForm({ listArticles }) {
     linkToArticle: "",
   });
   //const url = "http://localhost:4000/api/articles";
-  const addArticle = async (data) => {
-    try {
-      await axios.post(`/api/articles/create`, data);
-    } catch (err) {
-      return err;
-    }
-  };
+
   async function handleSubmit(e) {
     e.preventDefault();
     const res = await addArticle(newArticle);

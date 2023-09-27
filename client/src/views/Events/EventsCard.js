@@ -1,27 +1,21 @@
-import axios from "../../axios-index";
+//import axios from "../../axios-index";
 
-export default function EventsCard({ listEvents, event }) {
-  const deleteEvent = async () => {
+export default function EventsCard({ event }) {
+  /**const deleteEvent = async () => {
     console.log("deleting");
     //const url = "http://localhost:4000/api/events";
-    const res = await axios.delete(`/api/events/delete/${event._id}`);
-    await listEvents();
-  };
-
-  /**const 
-  const deleteEvent = async (data) => {
     try {
-      await axios.delete(`${url}/delete`, data);
+      await axios.delete(`/api/events/delete/${event._id}`);
     } catch (err) {
       return err;
     }
+    await listEvents();
   };
   async function handleDelete(e) {
     e.preventDefault();
-
     const res = await deleteEvent(deletedEvent);
-    await listEvents();
-*/
+    await listEvents();*/
+
   return (
     <div
       className="events-card"
@@ -50,7 +44,9 @@ export default function EventsCard({ listEvents, event }) {
           <b>More Infos:</b>
           <a href={event.linkToWebsite}>{event.linkToWebsite}</a>
         </div>
-        <button onClick={deleteEvent}>Delete</button>
+        {
+          //<button onClick={deleteEvent}>Delete</button>
+        }
       </div>
     </div>
   );

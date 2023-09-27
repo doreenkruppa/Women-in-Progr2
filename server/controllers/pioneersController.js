@@ -23,4 +23,14 @@ export const createPioneer = async (req, res) => {
   }
 };
 
-export default { listPioneers, createPioneer };
+export const deletePioneer = async (req, res) => {
+  try {
+    const toDelete = await Pioneer.findByIdAndDelete(req.params.id);
+    console.log("deleted:", toDelete);
+    return res.status(200).json(toDelete);
+  } catch (err) {
+    console.log("error", err);
+  }
+};
+
+export default { listPioneers, createPioneer, deletePioneer };

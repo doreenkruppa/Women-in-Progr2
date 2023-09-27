@@ -2,12 +2,12 @@ import express from "express";
 import {
   createEvent,
   listEvents,
-  removeEvent,
+  deleteEvent,
 } from "../controllers/eventsController.js";
 const router = express.Router();
 
 //GET: http://localhost:4000/api/events/list
-router.get("/", listEvents);
+router.get("/list", listEvents);
 //POST: http://localhost:4000/api/events/create
 //EXAMPLE JSON - BODY
 // {
@@ -17,5 +17,5 @@ router.get("/", listEvents);
 // }
 router.post("/create", createEvent);
 //DELETE: http://localhost:4000/api/events/delete
-router.delete("/delete/:id", removeEvent);
+router.delete("/delete/:id", deleteEvent);
 export default router;

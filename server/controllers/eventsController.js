@@ -26,7 +26,7 @@ export const createEvent = async (req, res) => {
       .json({ message: error.toString() });
   }
 };
-export const removeEvent = async (req, res) => {
+export const deleteEvent = async (req, res) => {
   try {
     const toDelete = await Event.findByIdAndDelete(req.params.id);
     console.log("deleted:", toDelete);
@@ -35,4 +35,4 @@ export const removeEvent = async (req, res) => {
     console.log("error", err);
   }
 };
-export default { listEvents, createEvent, removeEvent };
+export default { listEvents, createEvent, deleteEvent };

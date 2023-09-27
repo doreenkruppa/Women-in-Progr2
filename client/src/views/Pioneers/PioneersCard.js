@@ -1,6 +1,12 @@
 import React from "react";
+import axios from "../../axios-index";
 
-export default function PioneersCard({ pioneer }) {
+export default function PioneersCard({ pioneer, listPioneers }) {
+  const deletePioneer = async () => {
+    console.log("deleting...");
+    const res = await axios.delete(`/api/pioneers/delete/${pioneer._id}`);
+    await listPioneers();
+  };
   return (
     <div
       className="pioneer-card"
@@ -32,6 +38,7 @@ export default function PioneersCard({ pioneer }) {
           <a href={pioneer.linkToWebsite}>{pioneer.linkToWebsite}</a>
         </div>
       </div>
+      <button onClick={deletePioneer}>Delete</button>
     </div>
   );
 }

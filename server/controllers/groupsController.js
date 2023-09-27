@@ -21,7 +21,7 @@ export const createGroup = async (req, res) => {
   }
 };
 
-export const removeGroup = async (req, res) => {
+export const deleteGroup = async (req, res) => {
   try {
     const toDelete = await Group.findByIdAndDelete(req.params.id);
     console.log("deleted:", toDelete);
@@ -31,4 +31,4 @@ export const removeGroup = async (req, res) => {
   }
 };
 
-export default { listGroups, createGroup, removeGroup };
+export default { listGroups, createGroup, deleteGroup };

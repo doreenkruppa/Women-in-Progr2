@@ -27,9 +27,7 @@ mongoose
   });
 
 app.use("/api/events", eventsRoutes);
-//app.use("/api/home", homeRoutes);
 app.use("/api/pioneers", pioneersRoutes);
-//app.use("/api/groups", groupsRoutes);
 app.use("/api/articles", articlesRoutes);
 app.use("/api/groups", groupsRoutes);
 app.all("*", (req, res) => {

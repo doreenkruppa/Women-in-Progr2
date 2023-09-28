@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import "../../App.css";
 import { PioneersContext } from "../../context/PioneersContext";
 import PioneersCard from "./PioneersCard";
 import PioneersForm from "./PioneersForm";
@@ -7,7 +8,7 @@ export default function PioneersList() {
   const { pioneers } = useContext(PioneersContext);
   return (
     <>
-      <h1 id="group-list-top">
+      <h1 id="pioneers-list-top">
         {" "}
         Women Pioneers in Programming & Computer Science:
       </h1>

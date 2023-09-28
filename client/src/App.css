@@ -1,7 +1,4 @@
 .App {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
   text-align: center;
   overflow: scroll;
   background-color: rgb(173, 166, 218);
@@ -9,18 +6,17 @@
 }
 
 .home-container {
-  width: 75%;
+  /**width: 75%;*/
   display: flex;
   flex-flow: row;
-  justify-content: space-between;
+  justify-content: space-evenly;
   padding-left: 10px;
   margin-bottom: 10px;
   overflow: auto;
 }
 .welcome-text {
-  padding: 5px;
-  margin: 10px;
-  width: 50%;
+  padding: 20px 10px;
+  width: 30%;
   text-align: left;
 }
 .header {
@@ -47,10 +43,33 @@ ul {
 }
 
 .group-form {
-  width: 20%;
+  width: 25%;
   height: 600px;
   padding: 10px;
-  background-color: white;
+  margin-top: 20px;
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+}
+
+.pioneers-form {
+  width: 25%;
+  height: 600px;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: black;
+  color: white;
+  border-radius: 20px;
+}
+
+.articles-form {
+  width: 25%;
+  height: 600px;
+  padding: 10px;
+  margin-top: 20px;
+  background-color: black;
+  color: white;
+  border-radius: 20px;
 }
 .group-card {
   position: relative;
@@ -81,11 +100,10 @@ ul {
 }
 
 .groups-list-Container {
-  width: 65%;
   display: flex;
+  width: 100%;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding: 10px;
 }
 .groups-cards-Container {
@@ -115,7 +133,9 @@ ul {
   height: 600px;
   padding: 10px;
   margin-top: 20px;
-  background-color: white;
+  background-color: black;
+  color: white;
+  border-radius: 20px;
 }
 .nav-link {
   margin: 0px 20px;

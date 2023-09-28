@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import "../../App.css";
 import { GroupsContext } from "../../context/GroupsContext";
 import { PioneersContext } from "../../context/PioneersContext";
 

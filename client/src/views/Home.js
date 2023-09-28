@@ -1,4 +1,5 @@
 import React from "react";
+import "../App.css";
 import FetchingImageHome from "../components/FetchingData/FetchingImageHome";
 
 export default function Home() {

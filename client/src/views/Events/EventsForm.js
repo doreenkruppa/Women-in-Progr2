@@ -31,7 +31,7 @@ export default function EventsForm() {
     <div className="events-form-container">
       <div className=" form-adding-event">
         <form onSubmit={handleAddSubmit}>
-          <span className="event-span">Add a Event:</span>
+          <span className="event-span">Add an Event:</span>
           <input
             type="text"
             placeholder="name"

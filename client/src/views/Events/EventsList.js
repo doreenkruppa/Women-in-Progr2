@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import "../../App.css";
 import { EventsContext } from "../../context/EventsContext";
 //import axios from "../../axios-index";
 import EventsForm from "./EventsForm";

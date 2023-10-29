@@ -18,17 +18,19 @@ export default function EventsCard({ event }) {
 
   return (
     <div
-      className="events-card"
+      className="event-card"
       style={{
         border: "1px solid black",
         padding: "10px",
-        width: "40%",
-        height: "340px",
+        width: "60vw",
+        height: "370px",
         borderRadius: "20px",
-        marginBottom: "20px",
+        margin: "20px",
+        display: "flex",
+        flexDirection: "row",
       }}
     >
-      <div className="text">
+      <div className="events-cards-text">
         <h2>{event.name}</h2>
         <div>
           <p>

@@ -25,7 +25,7 @@ export default function EventsList() {
         {" "}
         upcoming events on the topics of feminism in programming:
       </h1>
-      <div className="events-cards-Container">
+      <div className="events-list-Container">
         {events &&
           events.map((event, i) => (
             <EventsCard events={events} event={event} key={i} />

@@ -1,9 +1,9 @@
- <!--<div className="image">
-        <img
-          style={{ width: "300px", height: "340px", borderRadius: "20px" }}
-          src={group.img}
-          alt="Logo of the group"
-        /> -->
+### Pioneers:
+
+name: "Jean E. Sammet",
+description: "geb. 1928, war die erste Frau, die die Präsidentschaft der Association for Computing Machinery (ACM) übernahm. Doch vor allem war sie die erste, die eine historische Sicht auf die Entwicklung der Programmierung wagte: ihre Darstellung der Programmiersprachen aus dem Jahre 1969 ist ein Klassiker. Diese zusammen mit zahlreichen weiteren Arbeiten auf diesem Gebiet ließen sie zur Chronistin der Programmiersprachenentwicklung avancieren.",
+linkToWebsite: "https://www.frauen-informatik-geschichte.de/index.php-id=120.htm",
+imageadresse: "https://www.frauen-informatik-geschichte.de/10148947593c7e10a71d4f5.jpg",
 
 # Getting Started with Create React App
 

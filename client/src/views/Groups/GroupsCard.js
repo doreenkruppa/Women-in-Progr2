@@ -10,8 +10,8 @@ export default function GroupsCard({ group }) {
       className="group-card"
       style={{
         //backgroundImage: `${group.img}`,
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
+        //backgroundRepeat: "no-repeat",
+        //backgroundSize: "cover",
         border: "1px solid black",
         padding: "10px",
         width: "40%",
@@ -31,7 +31,12 @@ export default function GroupsCard({ group }) {
           <b>Contact:</b>
           <a href={group.contact}>{group.contact}</a>
         </div>
-        <img style={{ width: "350px" }} src={group.img} alt={group.name} />
+        <img
+          className="image-group-card"
+          style={{ width: "300px", height: "340px", borderRadius: "20px" }}
+          src={group.img}
+          alt="Logo of the group"
+        />
         {/**<button onClick={deleteGroup}>Delete</button>
          * */}
       </div>

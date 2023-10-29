@@ -11,7 +11,7 @@ import Home from "./views/Home";
 import Footer from "./components/Footer/Footer";
 import EventsList from "./views/Events/EventsList";
 import ArticlesList from "./views/Articles/ArticlesList";
-import Sidebar from "./components/Sidebar/Sidebar";
+//import Sidebar from "./components/Sidebar/Sidebar";
 function App() {
   return (
     <>
@@ -21,7 +21,7 @@ function App() {
             <ArticlesContextProvider>
               <EventsContextProvider>
                 <Header />
-                <Sidebar />
+                {/* <Sidebar /> */}
                 <Routes>
                   <Route path="/" element={<Home />} />
                   <Route path="/groups" element={<GroupsList />} />

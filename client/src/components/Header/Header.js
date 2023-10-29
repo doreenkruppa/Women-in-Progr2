@@ -6,7 +6,7 @@ import { NavLink } from "react-router-dom";
 export default function Header() {
   return (
     <div className="header">
-      <h1>Women in Coding</h1>
+      <h1>Women* in Coding</h1>
       <div className="nav-list">
         <NavLink className="nav-link" to="/">
           home
